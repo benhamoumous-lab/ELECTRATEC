@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELECTRATEC SRL — Ascenseurs Belgique | Installation, Maintenance, Dépannage 24/7</title>
+<meta name="description" content="ELECTRATEC SRL : spécialiste ascenseurs en Belgique francophone. Installation, modernisation, maintenance, conformité AR 2003, dépannage 24h/24. ISO 9001. Bruxelles, Namur, Mons, Brabant wallon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   ELECTRATEC SRL — CSS GLOBAL
+   ═══════════════════════════════════════════════ */
+:root {
+  --navy:   #1e3a5f;
+  --navy2:  #2a4f7c;
+  --orange: #f06b1a;
+  --orange2:#d45c0f;
+  --off:    #f0f4f9;
+  --muted:  #6b7a8d;
+  --border: #e4e9f0;
+  --white:  #ffffff;
+  --radius: 10px;
+  --shadow: 0 4px 20px rgba(10,22,40,.07);
+  --shadow-lg: 0 12px 40px rgba(10,22,40,.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--navy);
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Syne', sans-serif;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+h4 { font-size: 1rem; font-weight: 700; }
+
+p { line-height: 1.75; color: var(--muted); }
+
+a { color: var(--orange); }
+
+img { max-width: 100%; display: block; }
+
+/* ── Layout ── */
+.cw  { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.cg  { background: var(--off); }
+.cm  { background: #1e3a5f; color: #fff; }
+
+/* ── Pages ── */
+.page {
+  display: none;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Hero sections ── */
+.phero {
+  padding: 100px 0 80px;
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.phero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(240,107,26,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.phero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom right, transparent 49%, #fff 50%);
+}
+.phero h1 { color: #fff; margin-bottom: 16px; }
+.phero p  { color: rgba(255,255,255,.78); max-width: 620px; font-size: 1.1rem; }
+.phi { padding-bottom: 100px; }
+
+/* ── Scrd badge ── */
+.scrd {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 30px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+}
+.scrd span {
+  color: var(--orange);
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ── Sections ── */
+section { padding: 80px 0; }
+
+/* ── Cards / ibox ── */
+.ibox {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* ── Service cards grid ── */
+.sgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.scard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 28px;
+  border-top: 3px solid var(--orange);
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.scard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.scard-icon { font-size: 2.2rem; margin-bottom: 16px; }
+.scard h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.1rem; }
+.scard p  { font-size: .9rem; margin-bottom: 16px; }
+.scard-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--orange);
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  transition: gap .2s;
+}
+.scard-link:hover { gap: 10px; }
+
+/* ── CTA button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  border: none;
+  transition: all .2s;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--orange2); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.4);
+}
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+.btn-navy {
+  background: #1e3a5f;
+  color: #fff;
+}
+.btn-navy:hover { background: #2a4f7c; }
+
+/* ── Section titles ── */
+.stitle {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.stitle h2 { margin-bottom: 12px; }
+.stitle p  { max-width: 560px; margin: 0 auto; }
+
+/* ── Sidebar layout ── */
+.slayout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+.sidebar { position: sticky; top: 100px; }
+
+/* ── Feature list ── */
+.flist { display: flex; flex-direction: column; gap: 14px; }
+.fitem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px;
+  background: var(--off);
+  border-radius: 8px;
+}
+.fitem-icon { font-size: 1.4rem; flex-shrink: 0; }
+.fitem-body h4 { margin-bottom: 4px; color: var(--navy); }
+.fitem-body p  { font-size: .88rem; margin: 0; }
+
+/* ── Stats bar ── */
+.statsbar {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 40px 0;
+}
+.statsbar .cw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--orange);
+  display: block;
+}
+.stat-label {
+  font-size: .85rem;
+  color: rgba(255,255,255,.7);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* ── Zones pills ── */
+.zpills { display: flex; flex-wrap: wrap; gap: 10px; }
+.zpill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.zpill span { color: var(--orange); }
+
+/* ── Trust badges ── */
+.trustbar {
+  background: var(--off);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+.trustbar .cw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.tbadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.tbadge-icon { font-size: 1.2rem; color: var(--orange); }
+
+/* ── Scroll reveal ── */
+.sr {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.sr.visible { opacity: 1; transform: translateY(0); }
+.sr-delay-1 { transition-delay: .1s; }
+.sr-delay-2 { transition-delay: .2s; }
+.sr-delay-3 { transition-delay: .3s; }
+.sr-delay-4 { transition-delay: .4s; }
+
+/* ── Blog grid ── */
+.bloggrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+.blogcard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+}
+.blogcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.blogimg {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blogcat {
+  display: inline-block;
+  background: rgba(240,107,26,.12);
+  color: var(--orange);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 4px 10px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+.blogbody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.blogtitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.blogexc { font-size: .85rem; line-height: 1.6; flex: 1; }
+.blogmeta {
+  display: block;
+  font-size: .75rem;
+  color: #9aafbe;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── FAQ ── */
+.faqlist { display: flex; flex-direction: column; gap: 0; }
+.faqi {
+  border-bottom: 1px solid var(--border);
+}
+.faqi:first-child { border-top: 1px solid var(--border); }
+.faqq {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: left;
+  transition: color .2s;
+}
+.faqq:hover { color: var(--orange); }
+.faq-icon {
+  flex-shrink: 0;
+  transition: transform .3s ease;
+  color: var(--orange);
+}
+.faqi.open .faq-icon { transform: rotate(180deg); }
+.faqa {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .4s ease, opacity .3s ease, padding .3s ease;
+}
+.faqa p { margin-bottom: 10px; font-size: .95rem; }
+.faqa ul { margin: 8px 0 12px 20px; }
+.faqa ul li { margin-bottom: 6px; font-size: .9rem; color: var(--muted); }
+
+/* ── Contact layout ── */
+.contlayout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── Form elements ── */
+.fg { margin-bottom: 20px; }
+.fi {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: .9rem;
+}
+.fs {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: .95rem;
+  color: var(--navy);
+  background: #fff;
+  transition: border-color .2s;
+}
+.fs:focus { outline: none; border-color: var(--orange); }
+.fsubmit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.fsubmit:hover { background: var(--orange2); transform: translateY(-2px); }
+
+.radio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--off);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: .88rem;
+  color: var(--navy);
+  transition: all .2s;
+}
+.radio-btn:has(input:checked) {
+  border-color: var(--orange);
+  background: rgba(240,107,26,.08);
+  color: var(--orange);
+  font-weight: 700;
+}
+.radio-btn input { display: none; }
+
+/* ── Footer ── */
+#site-footer {
+  background: #1e3a5f;
+  color: #fff;
+  margin-top: auto;
+}
+.ft { padding: 64px 0 40px; }
+.fgrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+.fcol-title {
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-bottom: 16px;
+  opacity: .45;
+}
+.fcol-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fcol-list li a {
+  color: rgba(255,255,255,.68);
+  text-decoration: none;
+  font-size: .9rem;
+  transition: color .2s;
+}
+.fcol-list li a:hover { color: var(--orange); }
+.fcol-list li:not(:has(a)) { color: rgba(255,255,255,.68); font-size: .9rem; }
+.fbadge {
+  display: inline-block;
+  padding: 5px 10px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 6px;
+  font-size: .77rem;
+  color: rgba(255,255,255,.75);
+}
+.fbot {
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding: 16px 0;
+  color: rgba(255,255,255,.4);
+}
+.fbot .cw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.fbot a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; }
+.fbot a:hover { color: var(--orange); }
+
+/* ── Toast ── */
+#toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: .92rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,.22);
+  z-index: 9999;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform .38s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+  pointer-events: none;
+  max-width: 360px;
+  font-family: 'Syne', sans-serif;
+}
+#toast.show { transform: translateY(0); opacity: 1; }
+#toast.success { background: #0c6e40; color: #fff; }
+#toast.error { background: #c0392b; color: #fff; }
+
+/* ── Navbar ── */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #dde6f0;
+  box-shadow: 0 2px 16px rgba(30,58,95,.08);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #1e3a5f;
+}
+.nav-logo-text span { color: var(--orange); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links a, .nav-links button {
+  background: none;
+  border: none;
+  color: #1e3a5f;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: .88rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .2s, background .2s;
+  white-space: nowrap;
+}
+.nav-links a:hover, .nav-links button:hover,
+.nav-links a.active, .nav-links button.active {
+  color: var(--orange);
+  background: rgba(240,107,26,.08);
+}
+.nav-cta {
+  background: var(--orange) !important;
+  color: #fff !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+}
+.nav-cta:hover { background: var(--orange2) !important; }
+.nav-mob-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1.4rem;
+}
+
+/* Mobile nav */
+#mob-nav {
+  position: fixed;
+  top: 70px; right: 0; bottom: 0;
+  width: 280px;
+  background: #1e3a5f;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  overflow-y: auto;
+  padding: 24px 0;
+  border-left: 1px solid rgba(255,255,255,.08);
+}
+#mob-nav.open { transform: translateX(0); }
+#mob-overlay {
+  position: fixed;
+  inset: 70px 0 0 0;
+  background: rgba(0,0,0,.5);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+#mob-overlay.visible { opacity: 1; pointer-events: all; }
+.mob-link {
+  display: block;
+  color: rgba(255,255,255,.88);
+  text-decoration: none;
+  padding: 14px 24px;
+  font-size: .95rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  cursor: pointer;
+  transition: color .2s, background .2s;
+}
+.mob-link:hover { color: var(--orange); background: rgba(255,255,255,.04); }
+.mob-section {
+  padding: 12px 24px 6px;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.3);
+}
+
+/* Page padding-top (navbar offset) */
+.page-content { padding-top: 70px; flex: 1; }
+
+/* ── Urgence banner ── */
+.urgence-bar {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: .88rem;
+  font-weight: 700;
+}
+.urgence-bar a { color: #fff; font-weight: 800; }
+
+/* ── Realisation cards ── */
+.realgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.realcard {
+  background: #1e3a5f;
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.realcard-header {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.realcard-body { padding: 20px; flex: 1; }
+.realcard-body h3 { color: #fff; margin-bottom: 8px; font-size: 1rem; }
+.realcard-body p { color: rgba(255,255,255,.7); font-size: .88rem; }
+.realcard-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+.realcard-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(240,107,26,.2);
+  border: 1px solid rgba(240,107,26,.4);
+  border-radius: 30px;
+  font-size: .75rem;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* ── Secteur cards ── */
+.sectgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.sectcard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  text-align: center;
+  transition: transform .2s;
+}
+.sectcard:hover { transform: translateY(-3px); }
+.sectcard-icon { font-size: 2.4rem; margin-bottom: 12px; }
+.sectcard h3 { font-size: .95rem; color: var(--navy); margin-bottom: 6px; }
+.sectcard p { font-size: .82rem; }
+
+/* ── Step list ── */
+.steplist { display: flex; flex-direction: column; gap: 20px; counter-reset: steps; }
+.stepitem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  counter-increment: steps;
+}
+.stepnum {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.stepbody h4 { color: var(--navy); margin-bottom: 4px; }
+.stepbody p { font-size: .88rem; margin: 0; }
+
+/* ── Process steps horizontal ── */
+.procgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+.procitem {
+  text-align: center;
+  padding: 24px 16px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.procnum {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 1.1rem;
+}
+.procitem h4 { color: var(--navy); margin-bottom: 6px; }
+.procitem p { font-size: .83rem; }
+
+/* ── Comparison table ── */
+.comptable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+.comptable th {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 16px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  text-align: left;
+}
+.comptable td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--navy);
+}
+.comptable tr:nth-child(even) td { background: var(--off); }
+.comptable .check { color: #0c8040; font-weight: 700; }
+.comptable .cross { color: #c0392b; }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .fgrid { grid-template-columns: 1fr 1fr; }
+  .slayout, .contlayout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .faq-layout-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mob-btn { display: block; }
+  .fgrid { grid-template-columns: 1fr; }
+  .procgrid { grid-template-columns: 1fr 1fr; }
+  section { padding: 48px 0; }
+  .phero { padding: 80px 0 80px; }
+}
+@media (max-width: 480px) {
+  .procgrid { grid-template-columns: 1fr; }
+  .statsbar .cw { gap: 24px; }
+  .stat-num { font-size: 1.8rem; }
+  .form-grid-2 { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 768px) {
+  .split-grid { grid-template-columns: 1fr !important; }
+  .split-grid img { height: 260px !important; }
+}
+</style>
+</head>
+<body>
+
+<script>
+// Init immédiat navigation
+function initNav() {
+  var pages = document.getElementsByClassName('page');
+  for (var i = 0; i < pages.length; i++) {
+    if (pages[i].id === 'page-home') {
+      pages[i].style.display = 'block';
+    } else {
+      pages[i].style.display = 'none';
+    }
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initNav);
+} else {
+  initNav();
+}
+</script>
+
+
+<!-- ── Urgence bar ── -->
+<div class="urgence-bar">
+  🚨 Urgence 24h/24 — 7j/7 : <a href="tel:+3225001234">+32 (0)2 500 12 34</a> — Intervention sous 2h en Belgique francophone
+</div>
+
+<!-- ── Navbar ── -->
+<nav id="navbar">
+  <div class="cw nav-inner">
+    <a class="nav-logo" onclick="nav('home')">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="6" fill="#f06b1a"/>
+        <path d="M8 24V10l8-6 8 6v14H20v-8h-8v8H8z" fill="white"/>
+        <rect x="13" y="18" width="6" height="6" fill="white" opacity=".5"/>
+      </svg>
+      <span class="nav-logo-text">ELECTRA<span>TEC</span></span>
+    </a>
+    <div class="nav-links">
+      <button onclick="nav('home')" data-nav="home" class="active">Accueil</button>
+      <button onclick="nav('depannage')">Dépannage 24/7</button>
+      <button onclick="nav('installation')">Services ▾</button>
+      <button onclick="nav('ascenseur-immeuble')">Équipements ▾</button>
+      <button onclick="nav('realisations')">Réalisations</button>
+      <button onclick="nav('blog')">Blog</button>
+      <button onclick="nav('faq')">FAQ</button>
+      <button onclick="nav('contact')" class="nav-cta">Devis gratuit →</button>
+    </div>
+    <button class="nav-mob-btn" onclick="openMob()" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div id="mob-overlay" onclick="closeMob()"></div>
+<nav id="mob-nav">
+  <span class="mob-section">Principal</span>
+  <a class="mob-link" onclick="nav('home')">🏠 Accueil</a>
+  <a class="mob-link" onclick="nav('depannage')">🚨 Dépannage 24/7</a>
+  <span class="mob-section">Services</span>
+  <a class="mob-link" onclick="nav('installation')">🏗️ Installation</a>
+  <a class="mob-link" onclick="nav('modernisation')">🔄 Modernisation</a>
+  <a class="mob-link" onclick="nav('maintenance')">🔧 Maintenance</a>
+  <a class="mob-link" onclick="nav('conformite')">⚖️ Conformité AR 2003</a>
+  <a class="mob-link" onclick="nav('audit')">🔍 Audit technique</a>
+  <span class="mob-section">Équipements</span>
+  <a class="mob-link" onclick="nav('ascenseur-immeuble')">🏢 Ascenseur immeuble</a>
+  <a class="mob-link" onclick="nav('ascenseur-domestique')">🏠 Ascenseur domestique</a>
+  <a class="mob-link" onclick="nav('monte-charge')">📦 Monte-charge</a>
+  <a class="mob-link" onclick="nav('monte-voiture')">🚗 Monte-voiture</a>
+  <a class="mob-link" onclick="nav('elevateur-pmr')">♿ Élévateur PMR</a>
+  <span class="mob-section">Infos</span>
+  <a class="mob-link" onclick="nav('secteurs')">🏭 Secteurs</a>
+  <a class="mob-link" onclick="nav('realisations')">📸 Réalisations</a>
+  <a class="mob-link" onclick="nav('blog')">📝 Blog</a>
+  <a class="mob-link" onclick="nav('faq')">❓ FAQ</a>
+  <a class="mob-link" onclick="nav('contact')">📞 Contact / Devis</a>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     PAGE : HOME
+     ════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+  <div class="page-content">
+
+    <!-- Hero -->
+    <section style="background:#1e3a5f;color:#fff;padding:120px 0 80px;position:relative;overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.2;" loading="eager" onerror="this.style.display='none'">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(30,58,95,0.88) 0%, rgba(30,58,95,0.60) 55%, rgba(30,58,95,0.78) 100%);"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom right,transparent 49%,#fff 50%);"></div>
+      <div class="cw" style="position:relative;z-index:1;">
+        <div class="scrd" style="margin-bottom:24px;"><span>🏆 ISO 9001 · Belgique francophone · Toutes marques</span></div>
+        <h1 style="color:#fff;max-width:700px;margin-bottom:20px;">Votre partenaire ascenseur <span style="color:var(--orange);">de confiance</span> en Belgique</h1>
+        <p style="max-width:580px;font-size:1.1rem;margin-bottom:36px;color:rgba(255,255,255,.8);">Installation, modernisation, maintenance et conformité AR 2003. Intervention d'urgence sous 2h. Bruxelles, Namur, Mons, Brabant wallon.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <button class="btn btn-primary" onclick="nav('contact')">Demander un devis gratuit →</button>
+          <a href="tel:+3225001234" class="btn btn-outline">🚨 Urgence : +32 (0)2 500 12 34</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust bar -->
+    <div class="trustbar">
+      <div class="cw">
+        <div class="tbadge"><span class="tbadge-icon">🏅</span> ISO 9001 certifié</div>
+        <div class="tbadge"><span class="tbadge-icon">🔧</span> Toutes marques</div>
+        <div class="tbadge"><span class="tbadge-icon">🕐</span> Intervention sous 2h</div>
+        <div class="tbadge"><span class="tbadge-icon">📋</span> Devis gratuit sous 24h</div>
+        <div class="tbadge"><span class="tbadge-icon">⭐</span> +500 ascenseurs entretenus</div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section class="cw">
+      <div class="stitle sr">
+        <div class="scrd" style="display:inline-flex;margin-bottom:12px;"><span>Nos expertises</span></div>
+        <h2>Des solutions complètes pour tous vos ascenseurs</h2>
+        <p>De l'installation à la maintenance, en passant par la mise en conformité, ELECTRATEC couvre l'intégralité du cycle de vie de votre ascenseur.</p>
+      </div>
+      <div class="sgrid">
+        <div class="scard sr sr-delay-1" onclick="nav('depannage')">
+          <div class="scard-icon">🚨</div>
+          <h3>Dépannage 24/7</h3>
+          <p>Intervention d'urgence sous 2h, 7j/7, 24h/24. Personnes bloquées ou panne simple : nous répondons toujours présents.</p>
+          <span class="scard-link">En savoir plus →</span>
+        </div>
+        <div class="scard sr sr-delay-2" onclick="nav('installation')">
+          <div class="scard-icon">🏗️</div>
+          <h3>Installation neuve</h3>
+          <p>Conception, fourniture et installation d'ascenseurs pour immeubles neufs ou bâtiments en rénovation. Toutes configurations.</p>
+          <span class="scard-link">En savoir plus →</span>
+        </div>
+        <div class="scard sr sr-delay-3" onclick="nav('modernisation')">
+          <div class="scard-icon">🔄</div>
+          <h3>Modernisation</h3>
+          <p>Remplacez vos composants obsolètes et prolongez la durée de vie de votre installation jusqu'à 20 ans pour 40 à 60% moins cher.</p>
+          <span class="scard-link">En savoir plus →</span>
+        </div>
+        <div class="scard sr sr-delay-4" onclick="nav('maintenance')">
+          <div class="scard-icon">🔧</div>
+          <h3>Maintenance préventive</h3>
+          <p>Contrats full-service ou partiels adaptés à votre immeuble. Techniciens certifiés, stock de pièces, rapport d'intervention.</p>
+          <span class="scard-link">En savoir plus →</span>
+        </div>
+        <div class="scard sr sr-delay-1" onclick="nav('conformite')">
+          <div class="scard-icon">⚖️</div>
+          <h3>Conformité AR 2003</h3>
+          <p>Mise en conformité selon l'arrêté royal du 9 mars 2003. Nous gérons le dossier de A à Z, y compris le contrôle par organisme agréé.</p>
+          <span class="scard-link">En savoir plus →</span>
+        </div>
+        <div class="scard sr sr-delay-2" onclick="nav('audit')">
+          <div class="scard-icon">🔍</div>
+          <h3>Audit technique</h3>
+          <p>Diagnostic indépendant complet de votre installation. Rapport détaillé avec priorisation des travaux et estimation budgétaire.</p>
+          <span class="scard-link">En savoir plus →</span>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Visual split section -->
+    <section class="cw" style="padding:72px 0 48px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;" class="split-grid">
+        <div class="sr">
+          <div class="scrd" style="margin-bottom:16px;"><span>Pourquoi ELECTRATEC ?</span></div>
+          <h2 style="margin-bottom:16px;">Une équipe certifiée ISO 9001, disponible partout en Belgique francophone</h2>
+          <p style="margin-bottom:20px;">Depuis plus de 20 ans, ELECTRATEC entretient et modernise les ascenseurs de plus de 500 immeubles. Toutes marques, toutes configurations, délai d'intervention garanti.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+            <div style="display:flex;gap:12px;align-items:center;"><span style="width:32px;height:32px;background:rgba(240,107,26,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0;">✓</span><span style="font-weight:600;font-size:.95rem;">Techniciens certifiés et formés en continu</span></div>
+            <div style="display:flex;gap:12px;align-items:center;"><span style="width:32px;height:32px;background:rgba(240,107,26,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0;">✓</span><span style="font-weight:600;font-size:.95rem;">Stock de pièces multimarques dans chaque camion</span></div>
+            <div style="display:flex;gap:12px;align-items:center;"><span style="width:32px;height:32px;background:rgba(240,107,26,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0;">✓</span><span style="font-weight:600;font-size:.95rem;">Rapport d'intervention digital après chaque visite</span></div>
+            <div style="display:flex;gap:12px;align-items:center;"><span style="width:32px;height:32px;background:rgba(240,107,26,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0;">✓</span><span style="font-weight:600;font-size:.95rem;">Devis gratuit sous 24h, sans engagement</span></div>
+          </div>
+          <button class="btn btn-primary" onclick="nav('contact')">Demander un devis →</button>
+        </div>
+        <div class="sr sr-delay-2" style="position:relative;">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80&auto=format&fit=crop" alt="Technicien ELECTRATEC en intervention" onerror="this.style.opacity='0'" style="width:100%;height:420px;object-fit:cover;border-radius:16px;box-shadow:0 20px 60px rgba(10,22,40,.18);">
+          <div style="position:absolute;bottom:20px;left:20px;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 20px rgba(30,58,95,.15);display:flex;align-items:center;gap:12px;">
+            <span style="font-size:1.8rem;">🏅</span>
+            <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:var(--navy);">ISO 9001 : 2015</div><div style="font-size:.78rem;color:var(--muted);">Certification qualité</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="statsbar sr">
+      <div class="cw">
+        <div class="stat"><span class="stat-num">+500</span><span class="stat-label">Ascenseurs entretenus</span></div>
+        <div class="stat"><span class="stat-num">2h</span><span class="stat-label">Délai intervention urgence</span></div>
+        <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Ans d'expérience</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Toutes marques</span></div>
+        <div class="stat"><span class="stat-num">ISO</span><span class="stat-label">9001 : 2015</span></div>
+      </div>
+    </div>
+
+    <!-- Équipements -->
+    <section class="cg">
+      <div class="cw">
+        <div class="stitle sr"><h2>Tous types d'équipements</h2><p>Nous intervenons sur l'ensemble des équipements de levage, quelle que soit la marque ou la configuration.</p></div>
+        <div class="sectgrid">
+          <div class="sectcard sr" onclick="nav('ascenseur-immeuble')"><div class="sectcard-icon">🏢</div><h3>Ascenseur immeuble</h3><p>Résidentiel et tertiaire, toutes marques</p></div>
+          <div class="sectcard sr sr-delay-1" onclick="nav('ascenseur-domestique')"><div class="sectcard-icon">🏠</div><h3>Ascenseur domestique</h3><p>Solutions sur mesure pour maisons individuelles</p></div>
+          <div class="sectcard sr sr-delay-2" onclick="nav('monte-charge')"><div class="sectcard-icon">📦</div><h3>Monte-charge</h3><p>Industriel, commercial, jusqu'à 5 000 kg</p></div>
+          <div class="sectcard sr sr-delay-3" onclick="nav('monte-voiture')"><div class="sectcard-icon">🚗</div><h3>Monte-voiture</h3><p>Garages, parkings, concessionnaires</p></div>
+          <div class="sectcard sr sr-delay-4" onclick="nav('elevateur-pmr')"><div class="sectcard-icon">♿</div><h3>Élévateur PMR</h3><p>Accessibilité conforme, ERP et privé</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zone intervention -->
+    <section class="cw sr">
+      <div class="stitle"><h2>Zone d'intervention</h2><p>Nous couvrons toute la Belgique francophone avec nos techniciens basés stratégiquement.</p></div>
+      <div class="zpills" style="justify-content:center;margin-bottom:32px;">
+        <div class="zpill"><span>📍</span> Bruxelles (19 communes)</div>
+        <div class="zpill"><span>📍</span> Brabant wallon</div>
+        <div class="zpill"><span>📍</span> Province de Namur</div>
+        <div class="zpill"><span>📍</span> Hainaut — Mons</div>
+      </div>
+      <div style="text-align:center;">
+        <button class="btn btn-navy" onclick="nav('contact')">Vérifier la couverture de votre zone →</button>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section style="background:linear-gradient(135deg,#f06b1a 0%,#e05010 100%);color:#fff;padding:64px 0;text-align:center;">
+      <div class="cw">
+        <h2 style="color:#fff;margin-bottom:12px;">Prêt à nous confier votre ascenseur ?</h2>
+        <p style="color:rgba(255,255,255,.88);margin-bottom:28px;font-size:1.05rem;">Devis gratuit sous 24h. Sans engagement. Réponse précise et personnalisée.</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
+          <button class="btn btn-outline" onclick="nav('contact')">Formulaire de contact →</button>
+          <a href="tel:+3225001234" class="btn" style="background:#fff;color:var(--orange);">📞 +32 (0)2 500 12 34</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : DÉPANNAGE 24/7
+     ════════════════════════════════════════════ -->
+<div id="page-depannage" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi">
+      <div class="cw">
+        <div class="scrd"><span>🚨 Urgence permanente</span></div>
+        <h1>Dépannage ascenseur 24h/24 — 7j/7</h1>
+        <p>Personnes bloquées, panne totale ou partielle : ELECTRATEC intervient sous 2 heures en Belgique francophone, toutes marques, toutes configurations.</p>
+        <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="tel:+3225001234" class="btn btn-primary" style="font-size:1.1rem;">🚨 +32 (0)2 500 12 34</a>
+          <button class="btn btn-outline" onclick="nav('contact')">Signaler une panne en ligne</button>
+        </div>
+      </div>
+    </section>
+    <div class="trustbar"><div class="cw">
+      <div class="tbadge"><span class="tbadge-icon">⏱️</span> Intervention &lt; 2h</div>
+      <div class="tbadge"><span class="tbadge-icon">📅</span> 365 jours/an</div>
+      <div class="tbadge"><span class="tbadge-icon">🔧</span> Toutes marques</div>
+      <div class="tbadge"><span class="tbadge-icon">🗺️</span> Belgique francophone</div>
+    </div></div>
+    <section class="cw">
+      <div class="slayout">
+        <div>
+          <h2 style="margin-bottom:24px;">Notre engagement dépannage</h2>
+          <div class="flist">
+            <div class="fitem sr"><div class="fitem-icon">👥</div><div class="fitem-body"><h4>Personnes bloquées</h4><p>Dégagement prioritaire en moins de 2 heures, protocole de sécurité rigoureux et communication avec les occupants pendant toute l'intervention.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">⚡</div><div class="fitem-body"><h4>Panne électrique ou électronique</h4><p>Diagnostic embarqué, remplacement de cartes électroniques, variateurs de fréquence, armoires de commande. Stock de pièces critiques en camion.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">🔩</div><div class="fitem-body"><h4>Défaillance mécanique</h4><p>Câbles, poulies, portes palières, serrures, moteurs : nos techniciens emportent les pièces d'usure les plus courantes pour limiter les délais.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📋</div><div class="fitem-body"><h4>Rapport d'intervention complet</h4><p>Chaque dépannage donne lieu à un rapport écrit : cause, pièces remplacées, recommandations préventives. Traçabilité totale.</p></div></div>
+          </div>
+          <div style="margin-top:40px;">
+            <h3 style="margin-bottom:20px;">Notre procédure d'intervention</h3>
+            <div class="steplist">
+              <div class="stepitem sr"><div class="stepnum">1</div><div class="stepbody"><h4>Appel 24/7</h4><p>Vous appelez le +32 (0)2 500 12 34 — un technicien décroche en moins de 3 sonneries.</p></div></div>
+              <div class="stepitem sr"><div class="stepnum">2</div><div class="stepbody"><h4>Diagnostic téléphonique</h4><p>Premier diagnostic à distance pour préparer l'intervention et estimer le matériel nécessaire.</p></div></div>
+              <div class="stepitem sr"><div class="stepnum">3</div><div class="stepbody"><h4>Dépêche du technicien</h4><p>Le technicien le plus proche est mobilisé immédiatement. ETA communiqué en temps réel.</p></div></div>
+              <div class="stepitem sr"><div class="stepnum">4</div><div class="stepbody"><h4>Intervention et remise en service</h4><p>Réparation, test complet, rapport d'intervention remis sur place ou par email.</p></div></div>
+            </div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div style="background:var(--orange);color:#fff;border-radius:12px;padding:28px;text-align:center;margin-bottom:20px;">
+            <div style="font-size:2.5rem;margin-bottom:8px;">🚨</div>
+            <h3 style="color:#fff;margin-bottom:6px;">Urgence maintenant</h3>
+            <p style="color:rgba(255,255,255,.85);font-size:.88rem;margin-bottom:16px;">Disponible 24h/24, 7j/7</p>
+            <a href="tel:+3225001234" style="display:block;background:#fff;color:var(--orange);padding:14px;border-radius:8px;font-weight:800;text-decoration:none;font-size:1.1rem;">+32 (0)2 500 12 34</a>
+          </div>
+          <div class="ibox" style="margin-bottom:20px;">
+            <h4 style="margin-bottom:12px;">Zones couvertes</h4>
+            <div class="zpills"><div class="zpill"><span>📍</span> Bruxelles</div><div class="zpill"><span>📍</span> Brabant wallon</div><div class="zpill"><span>📍</span> Namur</div><div class="zpill"><span>📍</span> Mons / Hainaut</div></div>
+          </div>
+          <div class="ibox">
+            <h4 style="margin-bottom:12px;">Tarification transparente</h4>
+            <p style="font-size:.88rem;">Les tarifs de dépannage d'urgence vous sont communiqués <strong>avant intervention</strong>. Pas de surprise sur la facture.</p>
+            <button onclick="nav('contact')" style="margin-top:14px;width:100%;padding:12px;background:#1e3a5f;color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:700;cursor:pointer;">Demander un devis →</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : INSTALLATION
+     ════════════════════════════════════════════ -->
+<div id="page-installation" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=80&auto=format&fit=crop');background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(30,58,95,0.68);"></div><div class="cw" style="position:relative;z-index:1;">
+      <div class="scrd"><span>Installation neuve</span></div>
+      <h1>Installation d'ascenseurs en Belgique</h1>
+      <p>Conception, fourniture et installation d'ascenseurs neufs pour tous types de bâtiments. Normes EN 81-20/50, garantie constructeur, accompagnement complet.</p>
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="nav('contact')">Demander un devis →</button>
+        <button class="btn btn-outline" onclick="nav('audit')">Audit préalable gratuit</button>
+      </div>
+    </div></section>
+    <section class="cw">
+      <div class="slayout">
+        <div>
+          <h2 style="margin-bottom:24px;">De la conception à la mise en service</h2>
+          <div class="flist">
+            <div class="fitem sr"><div class="fitem-icon">📐</div><div class="fitem-body"><h4>Étude technique préalable</h4><p>Analyse du bâtiment, contraintes architecturales, dimensionnement de la gaine, profondeur de cuvette. Nous travaillons avec vos architectes et bureaux d'études.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">🏗️</div><div class="fitem-body"><h4>Installation toutes configurations</h4><p>Ascenseurs hydrauliques, à traction, sans salle des machines. Du simple duplex à l'immeuble de bureaux complexe.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📋</div><div class="fitem-body"><h4>Conformité EN 81 dès l'origine</h4><p>Toutes nos installations sont conformes aux normes EN 81-20 et EN 81-50 et reçoivent le marquage CE requis.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">🤝</div><div class="fitem-body"><h4>Accompagnement complet</h4><p>Permis d'urbanisme, contrôle de réception, formation des occupants, contrat de maintenance post-installation.</p></div></div>
+          </div>
+          <div style="margin-top:40px;">
+            <h3 style="margin-bottom:20px;">Processus d'installation en 5 étapes</h3>
+            <div class="procgrid">
+              <div class="procitem sr"><div class="procnum">1</div><h4>Visite technique</h4><p>Analyse des contraintes du site</p></div>
+              <div class="procitem sr sr-delay-1"><div class="procnum">2</div><h4>Offre & plans</h4><p>Proposition technique et budgétaire</p></div>
+              <div class="procitem sr sr-delay-2"><div class="procnum">3</div><h4>Travaux gaine</h4><p>Coordination avec maçons / architecte</p></div>
+              <div class="procitem sr sr-delay-3"><div class="procnum">4</div><h4>Installation</h4><p>Montage, câblage, réglages</p></div>
+              <div class="procitem sr sr-delay-4"><div class="procnum">5</div><h4>Réception</h4><p>Contrôle agréé + mise en service</p></div>
+            </div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="ibox" style="background:#1e3a5f;color:#fff;border-radius:12px;padding:28px;margin-bottom:20px;">
+            <h3 style="color:#fff;margin-bottom:16px;">Devis installation</h3>
+            <p style="color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:16px;">Chaque projet est unique. Obtenez une estimation personnalisée sous 24h.</p>
+            <button onclick="nav('contact')" style="width:100%;padding:13px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:700;cursor:pointer;font-size:.95rem;">Demander un devis gratuit →</button>
+          </div>
+          <div class="ibox">
+            <h4 style="margin-bottom:12px;">Marques installées</h4>
+            <p style="font-size:.88rem;color:var(--muted);">Nous installons et maintenons toutes les grandes marques : Otis, Schindler, Kone, Thyssenkrupp, Mitsubishi, Orona et bien d'autres.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : MODERNISATION
+     ════════════════════════════════════════════ -->
+<div id="page-modernisation" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=80&auto=format&fit=crop');background-size:cover;background-position:center;"><div style="position:absolute;inset:0;background:rgba(30,58,95,0.68);"></div><div class="cw" style="position:relative;z-index:1;">
+      <div class="scrd"><span>Modernisation</span></div>
+      <h1>Modernisation d'ascenseurs — Belgique</h1>
+      <p>Prolongez la durée de vie de votre ascenseur de 15 à 20 ans pour 40 à 60 % moins cher qu'un remplacement complet. Diagnostic, devis et travaux clé-en-main.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Diagnostic gratuit →</button>
+    </div></section>
+    <section class="cw">
+      <div class="slayout">
+        <div>
+          <h2 style="margin-bottom:8px;">Quand moderniser ?</h2>
+          <p style="margin-bottom:28px;">Un ascenseur de plus de 15-20 ans peut bénéficier d'une modernisation partielle ou totale selon son état. Nos experts évaluent le ROI de chaque option.</p>
+          <div class="flist">
+            <div class="fitem sr"><div class="fitem-icon">⚡</div><div class="fitem-body"><h4>Armoire de commande</h4><p>Remplacement de l'électronique obsolète par des systèmes modernes : gains énergétiques immédiats, diagnostic à distance, connectivité.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">🏠</div><div class="fitem-body"><h4>Cabine et finitions</h4><p>Rénovation esthétique complète : revêtements, éclairage LED, signalétique, plancher. Impact direct sur la valorisation de l'immeuble.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">🚪</div><div class="fitem-body"><h4>Portes palières et de cabine</h4><p>Remplacement des portes vétustes, réduction des pannes liées aux serrures, amélioration de la sécurité et du confort acoustique.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">⚙️</div><div class="fitem-body"><h4>Groupe moteur et variateur</h4><p>Motorisation sans réducteur, variateur de fréquence : économies d'énergie jusqu'à 50 %, démarrage et arrêt plus doux.</p></div></div>
+          </div>
+          <div style="margin-top:36px;">
+            <div style="background:var(--off);border-radius:10px;padding:24px;">
+              <h3 style="margin-bottom:16px;">Modernisation vs. remplacement complet</h3>
+              <table class="comptable">
+                <thead><tr><th>Critère</th><th>Modernisation</th><th>Remplacement</th></tr></thead>
+                <tbody>
+                  <tr><td>Coût</td><td class="check">€€ (40-60% moins cher)</td><td>€€€€</td></tr>
+                  <tr><td>Durée travaux</td><td class="check">1-3 semaines</td><td>4-8 semaines</td></tr>
+                  <tr><td>Durée de vie gagnée</td><td class="check">15-20 ans</td><td>30-40 ans</td></tr>
+                  <tr><td>Conformité AR 2003</td><td class="check">Oui</td><td class="check">Oui</td></tr>
+                  <tr><td>Perturbation occupants</td><td class="check">Limitée</td><td>Importante</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="ibox" style="background:var(--orange);color:#fff;border-radius:12px;padding:28px;margin-bottom:20px;">
+            <h3 style="color:#fff;margin-bottom:12px;">Diagnostic modernisation</h3>
+            <p style="color:rgba(255,255,255,.85);font-size:.88rem;margin-bottom:16px;">Obtenez une évaluation honnête : moderniser ou remplacer ? Notre technicien vous dit la vérité.</p>
+            <button onclick="nav('contact')" style="width:100%;padding:13px;background:#fff;color:var(--orange);border:none;border-radius:8px;font-family:inherit;font-weight:800;cursor:pointer;">Planifier un diagnostic →</button>
+          </div>
+          <div class="ibox">
+            <h4 style="margin-bottom:12px;">Aides financières disponibles</h4>
+            <p style="font-size:.88rem;color:var(--muted);">TVA réduite 6 %, primes régionales, prêts à taux réduit. ELECTRATEC vous guide dans les démarches.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : MAINTENANCE
+     ════════════════════════════════════════════ -->
+<div id="page-maintenance" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Maintenance préventive</span></div>
+      <h1>Contrats de maintenance d'ascenseurs</h1>
+      <p>Contrats adaptés à votre budget et votre type d'immeuble. Formule full-service, contrat partiel ou régie : nous vous conseillons la formule la plus pertinente.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Demander un devis maintenance →</button>
+    </div></section>
+    <section class="cw">
+      <h2 style="margin-bottom:32px;">Nos formules de maintenance</h2>
+      <div class="sgrid">
+        <div class="scard sr">
+          <div class="scard-icon">🥇</div>
+          <h3>Full-Service</h3>
+          <p>Toutes les visites préventives, pièces de rechange incluses, dépannages illimités, rapport annuel complet. Idéal pour les gestionnaires souhaitant zéro surprise.</p>
+          <span class="scard-link" onclick="nav('contact')">Obtenir un tarif →</span>
+        </div>
+        <div class="scard sr sr-delay-1">
+          <div class="scard-icon">🥈</div>
+          <h3>Contrat Standard</h3>
+          <p>Visites préventives programmées, main-d'œuvre incluse, pièces d'usure courantes. Dépannages urgents au tarif préférentiel contractuel.</p>
+          <span class="scard-link" onclick="nav('contact')">Obtenir un tarif →</span>
+        </div>
+        <div class="scard sr sr-delay-2">
+          <div class="scard-icon">🥉</div>
+          <h3>Contrat Basique</h3>
+          <p>Visites préventives réglementaires uniquement. Pour les budgets contraints ou les installations récentes sous garantie constructeur.</p>
+          <span class="scard-link" onclick="nav('contact')">Obtenir un tarif →</span>
+        </div>
+      </div>
+      <div style="margin-top:48px;">
+        <h3 style="margin-bottom:20px;">Ce qu'inclut systématiquement notre maintenance</h3>
+        <div class="flist">
+          <div class="fitem sr"><div class="fitem-icon">📅</div><div class="fitem-body"><h4>Visites réglementaires programmées</h4><p>Fréquence conforme à l'AR 2003 : mensuelle ou trimestrielle selon le type d'ascenseur. Planifiées à l'avance, jamais reportées sans accord.</p></div></div>
+          <div class="fitem sr"><div class="fitem-icon">📊</div><div class="fitem-body"><h4>Rapport d'intervention digital</h4><p>Chaque visite donne lieu à un rapport accessible en ligne : observations, actions réalisées, recommandations prioritaires.</p></div></div>
+          <div class="fitem sr"><div class="fitem-icon">📞</div><div class="fitem-body"><h4>Ligne d'astreinte 24/7</h4><p>Tous nos contrats incluent l'accès à notre permanence téléphonique. Un technicien décroche à tout moment.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : CONFORMITÉ AR 2003
+     ════════════════════════════════════════════ -->
+<div id="page-conformite" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Réglementation belge</span></div>
+      <h1>Conformité AR 2003 — Mise en conformité ascenseurs</h1>
+      <p>L'arrêté royal du 9 mars 2003 impose des obligations strictes. ELECTRATEC analyse votre situation, identifie les non-conformités et réalise les travaux de mise en conformité clé-en-main.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Audit de conformité gratuit →</button>
+    </div></section>
+    <section class="cw">
+      <div class="slayout">
+        <div>
+          <h2 style="margin-bottom:24px;">Ce qu'impose l'AR 2003</h2>
+          <div class="flist">
+            <div class="fitem sr"><div class="fitem-icon">🔍</div><div class="fitem-body"><h4>Contrôle périodique obligatoire</h4><p>Contrôle par organisme agréé tous les 10 ans minimum. Premier contrôle dans les 12 mois suivant la mise en service.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">🔧</div><div class="fitem-body"><h4>Maintenance réglementaire</h4><p>Entretien au minimum tous les 3 mois (ascenseurs standard) ou mensuel (forte fréquentation). Tenu d'un carnet d'entretien.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📋</div><div class="fitem-body"><h4>Registre d'ascenseur</h4><p>Tenue d'un dossier technique complet : notice d'installation, schémas, rapports de contrôle, fiches d'intervention.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">⚠️</div><div class="fitem-body"><h4>Levée des non-conformités</h4><p>En cas de contrôle défavorable, délais stricts de mise en conformité. ELECTRATEC prend en charge l'ensemble de la procédure.</p></div></div>
+          </div>
+          <div style="margin-top:36px;background:rgba(240,107,26,.08);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:20px 24px;">
+            <h4 style="color:var(--navy);margin-bottom:8px;">⚠️ Risques en cas de non-conformité</h4>
+            <p style="font-size:.9rem;">Immobilisation de l'ascenseur par l'organisme agréé, responsabilité civile et pénale du propriétaire ou syndic, refus de couverture par l'assureur en cas d'accident.</p>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="ibox" style="background:#1e3a5f;color:#fff;border-radius:12px;padding:28px;margin-bottom:20px;">
+            <h3 style="color:#fff;margin-bottom:12px;">Audit de conformité</h3>
+            <p style="color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:16px;">Votre ascenseur est-il conforme à l'AR 2003 ? Notre technicien vérifie en 1h30.</p>
+            <button onclick="nav('contact')" style="width:100%;padding:13px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:700;cursor:pointer;">Demander l'audit →</button>
+          </div>
+          <div class="ibox">
+            <h4 style="margin-bottom:12px;">Organismes agréés partenaires</h4>
+            <p style="font-size:.88rem;color:var(--muted);">Nous coordonnons les contrôles avec tous les organismes agréés : ACEG, Bureau Veritas, TVA, AIB Vinçotte.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : AUDIT
+     ════════════════════════════════════════════ -->
+<div id="page-audit" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Diagnostic indépendant</span></div>
+      <h1>Audit technique d'ascenseur</h1>
+      <p>Rapport de diagnostic indépendant complet : état général, conformités, estimation des travaux, recommandations priorisées. Indispensable avant achat d'immeuble ou décision de travaux.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Planifier un audit →</button>
+    </div></section>
+    <section class="cw">
+      <div class="slayout">
+        <div>
+          <h2 style="margin-bottom:24px;">Pourquoi un audit indépendant ?</h2>
+          <p style="margin-bottom:28px;">Contrairement à une visite de maintenance réalisée par le prestataire habituel, notre audit est <strong>totalement indépendant</strong> : nous n'avons aucun intérêt commercial à recommander des travaux inutiles.</p>
+          <div class="flist">
+            <div class="fitem sr"><div class="fitem-icon">🏠</div><div class="fitem-body"><h4>Avant achat immobilier</h4><p>Identifiez les travaux à prévoir et leur coût avant la signature. Évitez les mauvaises surprises post-acquisition.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📊</div><div class="fitem-body"><h4>Planification pluriannuelle</h4><p>Établissez un plan de travaux sur 5-10 ans avec estimations budgétaires. Indispensable pour les fonds de réserve de copropriété.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">⚖️</div><div class="fitem-body"><h4>Second avis technique</h4><p>Votre prestataire recommande des travaux importants ? Obtenez un avis indépendant avant de décider.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📋</div><div class="fitem-body"><h4>Rapport utilisable en justice</h4><p>Notre rapport d'audit est rédigé par un technicien certifié et peut être utilisé dans le cadre de litiges ou de discussions avec assureurs.</p></div></div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="ibox" style="background:#1e3a5f;color:#fff;border-radius:12px;padding:28px;margin-bottom:20px;">
+            <h3 style="color:#fff;margin-bottom:12px;">Planifier un audit</h3>
+            <p style="color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:16px;">Délai habituel : 3 à 5 jours ouvrables. Rapport remis sous 48h après visite.</p>
+            <button onclick="nav('contact')" style="width:100%;padding:13px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:700;cursor:pointer;">Demander un audit →</button>
+          </div>
+          <div class="ibox">
+            <h4 style="margin-bottom:8px;">Contenu du rapport</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+              <li style="font-size:.87rem;display:flex;gap:8px;"><span style="color:var(--orange);">✓</span> État général et âge des composants</li>
+              <li style="font-size:.87rem;display:flex;gap:8px;"><span style="color:var(--orange);">✓</span> Points de non-conformité AR 2003</li>
+              <li style="font-size:.87rem;display:flex;gap:8px;"><span style="color:var(--orange);">✓</span> Travaux urgents vs différables</li>
+              <li style="font-size:.87rem;display:flex;gap:8px;"><span style="color:var(--orange);">✓</span> Estimation budgétaire détaillée</li>
+              <li style="font-size:.87rem;display:flex;gap:8px;"><span style="color:var(--orange);">✓</span> Recommandations priorisées</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : ASCENSEUR DOMESTIQUE
+     ════════════════════════════════════════════ -->
+<div id="page-ascenseur-domestique" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Résidentiel privé</span></div>
+      <h1>Ascenseur privatif pour maison individuelle</h1>
+      <p>Solutions sur mesure pour maisons belges : hydraulique, à traction ou pneumatique. Intégration discrète, confort optimal, conformité garantie.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Devis sur mesure →</button>
+    </div></section>
+    <section class="cw">
+      <div class="slayout">
+        <div>
+          <h2 style="margin-bottom:24px;">Nos solutions domestiques</h2>
+          <div class="flist">
+            <div class="fitem sr"><div class="fitem-icon">💧</div><div class="fitem-body"><h4>Ascenseur hydraulique</h4><p>Idéal pour 2 à 4 niveaux. Faible bruit, mouvement doux, pas de salle des machines en hauteur. Charge jusqu'à 400 kg.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">⚙️</div><div class="fitem-body"><h4>Ascenseur à traction</h4><p>Solution compacte sans salle des machines. Économique en énergie, adapté aux maisons avec gaine existante ou à créer.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">🌀</div><div class="fitem-body"><h4>Ascenseur pneumatique</h4><p>Sans gaine ni travaux importants dans certaines configurations. Esthétique tube transparent, installation rapide en 1 journée.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📋</div><div class="fitem-body"><h4>Permis et démarches</h4><p>ELECTRATEC vous accompagne dans les démarches administratives : permis d'urbanisme, coordination avec l'architecte.</p></div></div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="ibox" style="background:#1e3a5f;color:#fff;border-radius:12px;padding:28px;margin-bottom:20px;">
+            <h3 style="color:#fff;margin-bottom:12px;">Visite technique gratuite</h3>
+            <p style="color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:16px;">Un technicien évalue la faisabilité et vous remet une offre personnalisée sous 48h.</p>
+            <button onclick="nav('contact')" style="width:100%;padding:13px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:700;cursor:pointer;">Planifier la visite →</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : ASCENSEUR IMMEUBLE
+     ════════════════════════════════════════════ -->
+<div id="page-ascenseur-immeuble" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Résidentiel & tertiaire</span></div>
+      <h1>Ascenseurs pour immeubles collectifs</h1>
+      <p>Installation, maintenance et modernisation d'ascenseurs pour immeubles résidentiels, bureaux et bâtiments mixtes. De 3 à 30+ arrêts.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Demander un devis →</button>
+    </div></section>
+    <section class="cw">
+      <div class="flist" style="max-width:700px;">
+        <div class="fitem sr"><div class="fitem-icon">🏢</div><div class="fitem-body"><h4>Immeubles résidentiels</h4><p>De la petite copropriété de 4 étages au grand ensemble de 15+ niveaux. Maintenance contractuelle, conformité AR 2003, dépannage prioritaire.</p></div></div>
+        <div class="fitem sr"><div class="fitem-icon">🏬</div><div class="fitem-body"><h4>Immeubles de bureaux</h4><p>Disponibilité maximale, interventions programmées hors heures de bureau, reporting client dédié. SLA adaptés au trafic intense.</p></div></div>
+        <div class="fitem sr"><div class="fitem-icon">🏪</div><div class="fitem-body"><h4>Bâtiments mixtes & commerciaux</h4><p>Gestion multi-ascenseurs, coordination avec la gestion de bâtiment, intégration GTB. Expérience sur tous types de configurations.</p></div></div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <button class="btn btn-primary" onclick="nav('contact')">Contacter un expert →</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : MONTE-CHARGE
+     ════════════════════════════════════════════ -->
+<div id="page-monte-charge" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Industrie & Commerce</span></div>
+      <h1>Monte-charge industriels et commerciaux</h1>
+      <p>Installation et maintenance de monte-charges jusqu'à 5 000 kg. Conformité RGPT, marquage CE, intervention urgente sur tout équipement en panne.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Devis monte-charge →</button>
+    </div></section>
+    <section class="cw">
+      <div class="flist" style="max-width:700px;">
+        <div class="fitem sr"><div class="fitem-icon">📦</div><div class="fitem-body"><h4>Monte-charges marchandises</h4><p>Capacités de 100 à 5 000 kg. Entrepôts, commerces, restaurants, hôpitaux. Installation conforme aux normes EN 81-31.</p></div></div>
+        <div class="fitem sr"><div class="fitem-icon">🏭</div><div class="fitem-body"><h4>Élévateurs industriels</h4><p>Plateformes élévatrices pour lignes de production, accès à mezzanines, chargement/déchargement. Certification RGPT obligatoire.</p></div></div>
+        <div class="fitem sr"><div class="fitem-icon">⚖️</div><div class="fitem-body"><h4>Conformité employeur</h4><p>En tant qu'employeur, vous êtes responsable de la sécurité du monte-charge. ELECTRATEC prend en charge l'ensemble des obligations réglementaires.</p></div></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : MONTE-VOITURE
+     ════════════════════════════════════════════ -->
+<div id="page-monte-voiture" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Parking & Garage</span></div>
+      <h1>Monte-voiture et élévateurs de parking</h1>
+      <p>Solutions pour garages privés, parkings collectifs et concessionnaires automobiles. Capacités de 2 000 à 5 000 kg.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Demander un devis →</button>
+    </div></section>
+    <section class="cw">
+      <div class="flist" style="max-width:700px;">
+        <div class="fitem sr"><div class="fitem-icon">🚗</div><div class="fitem-body"><h4>Usage privatif</h4><p>Pour maisons avec double niveau de garage ou accès à sous-sol. Discret, fiable, entretien annuel suffisant.</p></div></div>
+        <div class="fitem sr"><div class="fitem-icon">🏢</div><div class="fitem-body"><h4>Parking collectif</h4><p>Optimisation de l'espace en hauteur ou profondeur. Normes NEN-EN 1570 et réglementation incendie strictement respectées.</p></div></div>
+        <div class="fitem sr"><div class="fitem-icon">🔧</div><div class="fitem-body"><h4>Concessionnaires & ateliers</h4><p>Équipements de levage pour ateliers mécaniques : ponts élévateurs, monte-voitures bi-colonnes ou ciseaux. Maintenance préventive.</p></div></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : ÉLÉVATEUR PMR
+     ════════════════════════════════════════════ -->
+<div id="page-elevateur-pmr" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Accessibilité</span></div>
+      <h1>Élévateurs PMR — Accessibilité pour tous</h1>
+      <p>Élévateurs verticaux et inclinaux pour personnes à mobilité réduite. ERP, logements collectifs, lieux publics : nous assurons votre conformité aux normes d'accessibilité.</p>
+      <button class="btn btn-primary" style="margin-top:24px;" onclick="nav('contact')">Étude d'accessibilité gratuite →</button>
+    </div></section>
+    <section class="cw">
+      <div class="slayout">
+        <div>
+          <h2 style="margin-bottom:24px;">Solutions d'accessibilité</h2>
+          <div class="flist">
+            <div class="fitem sr"><div class="fitem-icon">⬆️</div><div class="fitem-body"><h4>Élévateur vertical</h4><p>Course jusqu'à 3 m, largeur de cabine adaptée au fauteuil roulant. Installation sans gaine dans de nombreuses configurations.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📐</div><div class="fitem-body"><h4>Élévateur incliné</h4><p>Pour escaliers droits ou courbes. Solution économique quand un ascenseur vertical n'est pas réalisable architecturalement.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">♿</div><div class="fitem-body"><h4>Monte-escalier</h4><p>Siège ou plateforme motorisée sur rail. Installation rapide, sans travaux importants. Idéal pour domicile ou petit ERP.</p></div></div>
+            <div class="fitem sr"><div class="fitem-icon">📋</div><div class="fitem-body"><h4>Démarches et aides</h4><p>Nous vous guidons pour les demandes de primes AViQ, prêts MIDES (Bruxelles) et TVA réduite 6 % pour personnes handicapées.</p></div></div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="ibox" style="background:#1e3a5f;color:#fff;border-radius:12px;padding:28px;">
+            <h3 style="color:#fff;margin-bottom:12px;">Étude gratuite</h3>
+            <p style="color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:16px;">Évaluation sur site + conseils sur les aides financières disponibles.</p>
+            <button onclick="nav('contact')" style="width:100%;padding:13px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:700;cursor:pointer;">Planifier l'étude →</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : SECTEURS
+     ════════════════════════════════════════════ -->
+<div id="page-secteurs" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Nos clients</span></div>
+      <h1>Secteurs d'activité</h1>
+      <p>ELECTRATEC intervient dans tous les secteurs nécessitant des équipements de levage : résidentiel, tertiaire, industriel, public.</p>
+    </div></section>
+    <section class="cw">
+      <div class="sectgrid">
+        <div class="sectcard sr"><div class="sectcard-icon">🏘️</div><h3>Copropriétés</h3><p>Syndics et associations de copropriétaires. Contrats adaptés, reporting transparent.</p></div>
+        <div class="sectcard sr sr-delay-1"><div class="sectcard-icon">🏢</div><h3>Bureaux & Tertiaire</h3><p>Immeubles de bureaux, coworking, tours. Disponibilité maximale garantie.</p></div>
+        <div class="sectcard sr sr-delay-2"><div class="sectcard-icon">🏥</div><h3>Santé</h3><p>Hôpitaux, maisons de repos, cliniques. Normes spécifiques, interventions prioritaires.</p></div>
+        <div class="sectcard sr sr-delay-3"><div class="sectcard-icon">🏬</div><h3>Commerce & Retail</h3><p>Centres commerciaux, grandes surfaces, hôtels. Contrats multi-sites.</p></div>
+        <div class="sectcard sr"><div class="sectcard-icon">🏭</div><h3>Industrie</h3><p>Usines, entrepôts, logistique. Monte-charges lourds, conformité RGPT.</p></div>
+        <div class="sectcard sr sr-delay-1"><div class="sectcard-icon">🏛️</div><h3>Secteur public</h3><p>Administrations, musées, bâtiments classés. Marchés publics, PME agréée.</p></div>
+        <div class="sectcard sr sr-delay-2"><div class="sectcard-icon">🎓</div><h3>Enseignement</h3><p>Écoles, universités, internats. Accessibilité PMR obligatoire.</p></div>
+        <div class="sectcard sr sr-delay-3"><div class="sectcard-icon">🏠</div><h3>Résidentiel privé</h3><p>Maisons individuelles, villas. Solutions domestiques sur mesure.</p></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : RÉALISATIONS
+     ════════════════════════════════════════════ -->
+<div id="page-realisations" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Portfolio</span></div>
+      <h1>Nos réalisations en Belgique</h1>
+      <p>Découvrez une sélection de projets réalisés par ELECTRATEC en Belgique francophone : installations neuves, modernisations et mises en conformité.</p>
+    </div></section>
+    <section class="cw">
+      <div class="realgrid">
+        <div class="realcard sr"><div class="realcard-header" style="background:rgb(10,22,40);position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;" loading="lazy" onerror="this.style.display='none'"></div><div class="realcard-body"><h3>Résidence Le Belvédère — Bruxelles</h3><p>Modernisation complète de 2 ascenseurs Otis : armoire de commande, cabine, portes palières. 12 arrêts.</p></div><div class="realcard-meta"><span class="realcard-tag">Modernisation</span><span class="realcard-tag">Bruxelles</span></div></div>
+        <div class="realcard sr sr-delay-1"><div class="realcard-header" style="background:rgb(42,10,58);position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;" loading="lazy" onerror="this.style.display='none'"></div><div class="realcard-body"><h3>Tour Paradis — Namur</h3><p>Installation neuve : 1 ascenseur traction sans salle des machines, 8 arrêts. Marquage CE, réception ACEG.</p></div><div class="realcard-meta"><span class="realcard-tag">Installation</span><span class="realcard-tag">Namur</span></div></div>
+        <div class="realcard sr sr-delay-2"><div class="realcard-header" style="background:rgb(10,58,42);position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;" loading="lazy" onerror="this.style.display='none'"></div><div class="realcard-body"><h3>Clinique Sainte-Anne — Mons</h3><p>Contrat de maintenance full-service sur 4 ascenseurs. Interventions hors heures ouvrables. SLA 2h.</p></div><div class="realcard-meta"><span class="realcard-tag">Maintenance</span><span class="realcard-tag">Mons</span></div></div>
+        <div class="realcard sr"><div class="realcard-header" style="background:rgb(58,42,10);position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;" loading="lazy" onerror="this.style.display='none'"></div><div class="realcard-body"><h3>Villa Particulière — Waterloo</h3><p>Ascenseur hydraulique domestique 3 niveaux. Permis d'urbanisme, installation en 5 jours.</p></div><div class="realcard-meta"><span class="realcard-tag">Domestique</span><span class="realcard-tag">Brabant wallon</span></div></div>
+        <div class="realcard sr sr-delay-1"><div class="realcard-header" style="background:rgb(26,10,58);position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;" loading="lazy" onerror="this.style.display='none'"></div><div class="realcard-body"><h3>École Communale — Nivelles</h3><p>Installation élévateur PMR conforme. Dossier AViQ et permis d'urbanisme gérés par ELECTRATEC.</p></div><div class="realcard-meta"><span class="realcard-tag">PMR</span><span class="realcard-tag">Brabant wallon</span></div></div>
+        <div class="realcard sr sr-delay-2"><div class="realcard-header" style="background:rgb(10,42,58);position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;" loading="lazy" onerror="this.style.display='none'"></div><div class="realcard-body"><h3>Copropriété Les Érables — Charleroi</h3><p>Mise en conformité AR 2003 sur 3 ascenseurs Schindler. Rapport défavorable → levée de toutes les non-conformités.</p></div><div class="realcard-meta"><span class="realcard-tag">Conformité</span><span class="realcard-tag">Hainaut</span></div></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : BLOG
+     ════════════════════════════════════════════ -->
+<div id="page-blog" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Conseils & Expertise</span></div>
+      <h1>Blog Ascenseurs Belgique</h1>
+      <p>Actualités réglementaires, conseils techniques et guides pratiques pour gestionnaires d'immeubles, syndics et propriétaires en Belgique francophone.</p>
+    </div></section>
+    <section class="cw" style="padding-top:48px;">
+      <div class="bloggrid">
+        <article class="blogcard sr" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,22,40);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">⚖️</span></div><div class="blogbody"><span class="blogcat">Réglementation</span><h3 class="blogtitle">AR 2003 Belgique : ce que tout propriétaire d'ascenseur doit savoir en 2025</h3><p class="blogexc">L'AR impose des contrôles périodiques stricts. Obligations concrètes, délais et sanctions en cas de non-conformité.</p><span class="blogmeta">Réglementation · 8 min</span></div></article>
+        <article class="blogcard sr sr-delay-1" onclick="nav('contact')"><div class="blogimg" style="background:rgb(240,107,26);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">💶</span></div><div class="blogbody"><span class="blogcat">Budget</span><h3 class="blogtitle">Combien coûte la maintenance d'un ascenseur en Belgique ? Tarifs 2025</h3><p class="blogexc">Contrat full-service, partiel ou régie : comparatif des formules, fourchettes de prix réels et conseils pour ne pas surpayer.</p><span class="blogmeta">Budget · 6 min</span></div></article>
+        <article class="blogcard sr sr-delay-2" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,102,40);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🔄</span></div><div class="blogbody"><span class="blogcat">Modernisation</span><h3 class="blogtitle">Moderniser ou remplacer son ascenseur : comment décider et combien ça coûte ?</h3><p class="blogexc">Analyse coût/bénéfice pour un ascenseur de plus de 15 ans. ROI attendu et aides disponibles en Wallonie et à Bruxelles.</p><span class="blogmeta">Modernisation · 7 min</span></div></article>
+        <article class="blogcard sr" onclick="nav('contact')"><div class="blogimg" style="background:rgb(26,26,110);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">♿</span></div><div class="blogbody"><span class="blogcat">Accessibilité</span><h3 class="blogtitle">Élévateur PMR vs ascenseur classique : obligations légales et solutions adaptées</h3><p class="blogexc">ERP, logements collectifs, bureaux : quelles obligations d'accessibilité s'appliquent ? Guide comparatif et subventions.</p><span class="blogmeta">Accessibilité · 9 min</span></div></article>
+        <article class="blogcard sr sr-delay-1" onclick="nav('contact')"><div class="blogimg" style="background:rgb(110,10,10);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🚨</span></div><div class="blogbody"><span class="blogcat">Urgences</span><h3 class="blogtitle">Ascenseur en panne : procédure d'urgence, responsabilités et délais légaux en Belgique</h3><p class="blogexc">Qui appeler ? Quelles obligations du syndic en cas de panne prolongée ? Ce que dit la loi belge.</p><span class="blogmeta">Urgences · 5 min</span></div></article>
+        <article class="blogcard sr sr-delay-2" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,74,110);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🔍</span></div><div class="blogbody"><span class="blogcat">Contrôle</span><h3 class="blogtitle">Contrôle périodique en Belgique : qui contrôle, quand et comment ?</h3><p class="blogexc">ACEG, Bureau Veritas, TVA… Quel organisme choisir ? Fréquence, documents requis et lecture du rapport d'inspection.</p><span class="blogmeta">Contrôle · 7 min</span></div></article>
+        <article class="blogcard sr" onclick="nav('contact')"><div class="blogimg" style="background:rgb(61,61,10);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">📦</span></div><div class="blogbody"><span class="blogcat">Monte-charge</span><h3 class="blogtitle">Monte-charge industriel : réglementation RGPT, marquage CE et obligations employeur</h3><p class="blogexc">Guide détaillé de vos obligations en tant qu'employeur ou gestionnaire de monte-charge en Belgique.</p><span class="blogmeta">Industrie · 8 min</span></div></article>
+        <article class="blogcard sr sr-delay-1" onclick="nav('contact')"><div class="blogimg" style="background:rgb(74,10,110);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🏠</span></div><div class="blogbody"><span class="blogcat">Résidentiel</span><h3 class="blogtitle">Ascenseur privatif dans une maison individuelle : permis, coûts et démarches en Wallonie</h3><p class="blogexc">Faut-il un permis d'urbanisme ? Quels travaux préalables ? Quel budget prévoir ?</p><span class="blogmeta">Résidentiel · 10 min</span></div></article>
+        <article class="blogcard sr sr-delay-2" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,58,74);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">📋</span></div><div class="blogbody"><span class="blogcat">Audit</span><h3 class="blogtitle">Audit technique : pourquoi le réaliser avant d'acheter ou de rénover un immeuble</h3><p class="blogexc">Un audit indépendant révèle les non-conformités cachées. Évitez les mauvaises surprises lors d'une transaction immobilière.</p><span class="blogmeta">Audit · 6 min</span></div></article>
+        <article class="blogcard sr" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,90,42);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">⚡</span></div><div class="blogbody"><span class="blogcat">Énergie</span><h3 class="blogtitle">Ascenseur écoénergétique : réduire sa consommation électrique jusqu'à 60 %</h3><p class="blogexc">Variateur de fréquence, récupération d'énergie, mode veille : leviers techniques pour réduire la facture énergétique.</p><span class="blogmeta">Énergie · 7 min</span></div></article>
+        <article class="blogcard sr sr-delay-1" onclick="nav('contact')"><div class="blogimg" style="background:rgb(42,10,90);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🏢</span></div><div class="blogbody"><span class="blogcat">Syndics</span><h3 class="blogtitle">Guide du syndic : toutes vos obligations légales concernant l'ascenseur de copropriété</h3><p class="blogexc">Responsabilité civile, assurance, contrôles obligatoires, registre d'ascenseur : checklist complète pour syndics belges.</p><span class="blogmeta">Syndics · 9 min</span></div></article>
+        <article class="blogcard sr sr-delay-2" onclick="nav('contact')"><div class="blogimg" style="background:rgb(90,42,10);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🏷️</span></div><div class="blogbody"><span class="blogcat">Marques</span><h3 class="blogtitle">Otis, Schindler, Kone, Thyssenkrupp : êtes-vous obligé de rester avec votre marque ?</h3><p class="blogexc">La loi belge vous protège. Découvrez comment choisir un prestataire indépendant qualifié et comparer les offres.</p><span class="blogmeta">Marques · 6 min</span></div></article>
+        <article class="blogcard sr" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,26,74);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🚗</span></div><div class="blogbody"><span class="blogcat">Monte-voiture</span><h3 class="blogtitle">Monte-voiture et élévateur parking : installation, conformité et entretien en Belgique</h3><p class="blogexc">Normes NEN-EN 1570, réglementation incendie : tout ce qu'il faut savoir avant d'installer un monte-voiture.</p><span class="blogmeta">Parking · 7 min</span></div></article>
+        <article class="blogcard sr sr-delay-1" onclick="nav('contact')"><div class="blogimg" style="background:rgb(74,74,10);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🛡️</span></div><div class="blogbody"><span class="blogcat">Assurance</span><h3 class="blogtitle">Assurance ascenseur : RC, omnium, garantie constructeur — ce qui vous couvre vraiment</h3><p class="blogexc">Un accident dans l'ascenseur, qui est responsable ? Analyse des couvertures d'assurance et zones de responsabilité.</p><span class="blogmeta">Assurance · 8 min</span></div></article>
+        <article class="blogcard sr sr-delay-2" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,58,26);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🏛️</span></div><div class="blogbody"><span class="blogcat">Bruxelles</span><h3 class="blogtitle">Réglementation ascenseurs à Bruxelles : spécificités régionales et permis d'urbanisme</h3><p class="blogexc">La Région bruxelloise impose des règles complémentaires à la législation fédérale. Guide pour immeubles bruxellois.</p><span class="blogmeta">Bruxelles · 7 min</span></div></article>
+        <article class="blogcard sr" onclick="nav('contact')"><div class="blogimg" style="background:rgb(58,10,10);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">⏳</span></div><div class="blogbody"><span class="blogcat">Technique</span><h3 class="blogtitle">Quelle est la durée de vie d'un ascenseur et comment l'optimiser ?</h3><p class="blogexc">Un ascenseur bien entretenu peut durer 30 à 40 ans. Pièces critiques à surveiller et signaux d'alerte à ne pas ignorer.</p><span class="blogmeta">Technique · 8 min</span></div></article>
+        <article class="blogcard sr sr-delay-1" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,42,74);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🏗️</span></div><div class="blogbody"><span class="blogcat">Construction</span><h3 class="blogtitle">Installer un ascenseur dans un immeuble neuf : normes EN 81, pit et gaine — guide promoteur</h3><p class="blogexc">Dimensionnement de la gaine, profondeur de cuvette, normes EN 81-20/50 : contraintes à intégrer dès la conception.</p><span class="blogmeta">Construction · 10 min</span></div></article>
+        <article class="blogcard sr sr-delay-2" onclick="nav('contact')"><div class="blogimg" style="background:rgb(42,26,10);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">✨</span></div><div class="blogbody"><span class="blogcat">Design</span><h3 class="blogtitle">Rénovation esthétique de cabine : valoriser un immeuble à partir de 3 000 €</h3><p class="blogexc">Revêtements, éclairage LED, panneaux inox, signalétique digitale : moderniser l'apparence sans tout remplacer.</p><span class="blogmeta">Design · 5 min</span></div></article>
+        <article class="blogcard sr" onclick="nav('contact')"><div class="blogimg" style="background:rgb(26,58,10);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">📊</span></div><div class="blogbody"><span class="blogcat">Copropriété</span><h3 class="blogtitle">Fonds de réserve ascenseur : comment budgétiser et anticiper les gros travaux</h3><p class="blogexc">Calculez la quote-part ascenseur, planifiez les travaux sur 10 ans et évitez les appels de fonds d'urgence.</p><span class="blogmeta">Copropriété · 8 min</span></div></article>
+        <article class="blogcard sr sr-delay-1" onclick="nav('contact')"><div class="blogimg" style="background:rgb(10,22,40);position:relative;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" loading="lazy" onerror="this.style.display='none'">
+          <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;height:100%;"><span style="font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))">🤝</span></div><div class="blogbody"><span class="blogcat">Conseil</span><h3 class="blogtitle">Comment choisir son prestataire d'entretien d'ascenseur en Belgique : 7 critères décisifs</h3><p class="blogexc">Certifications, délai garanti, stock de pièces, références locales : la grille d'évaluation pour faire le bon choix.</p><span class="blogmeta">Conseil · 6 min</span></div></article>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : FAQ
+     ════════════════════════════════════════════ -->
+<div id="page-faq" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Questions fréquentes</span></div>
+      <h1>FAQ Ascenseurs</h1>
+      <p>Les réponses aux questions les plus posées par nos clients — syndics, propriétaires et gestionnaires d'immeubles en Belgique francophone.</p>
+    </div></section>
+    <section class="cw" style="padding-top:48px;">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start;" class="faq-layout-grid">
+        <div>
+          <div class="faqlist" id="faqlist">
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Quelle est la fréquence légale de maintenance d'un ascenseur en Belgique ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p>L'AR du 9 mars 2003 impose un <strong>entretien au minimum tous les 3 mois</strong> pour les ascenseurs standard, et mensuel pour les ascenseurs à fort trafic. Un <strong>contrôle par organisme agréé</strong> (ACEG, Bureau Veritas, TVA…) est obligatoire tous les 10 ans, avec premier contrôle dans les 12 mois après mise en service.</p><p>Le propriétaire ou le syndic est responsable du respect de ces fréquences. En cas de contrôle défavorable, des délais de mise en conformité sont imposés sous peine d'interdiction d'utilisation.</p></div>
+            </div>
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Qui est responsable de l'ascenseur dans une copropriété ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p>C'est <strong>l'Association des Copropriétaires (ACP)</strong>, représentée par le <strong>syndic</strong>, qui est responsable de la maintenance et de la conformité de l'ascenseur. Cette responsabilité est à la fois contractuelle et légale.</p><p>En cas d'accident, la responsabilité civile de la copropriété peut être engagée si un défaut d'entretien est prouvé. Il est fortement conseillé de contracter une assurance RC copropriété couvrant explicitement les équipements d'ascenseur.</p></div>
+            </div>
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Quel est le délai d'intervention pour un dépannage d'urgence ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p>ELECTRATEC garantit une <strong>intervention sous 2 heures</strong> en cas d'urgence avec personnes bloquées, 7j/7 et 24h/24. Pour les pannes sans personne bloquée, le délai standard est de <strong>4 à 8 heures en journée</strong>.</p><p>La loi belge n'impose pas de délai précis, mais votre contrat de maintenance doit mentionner les SLA. Vérifiez toujours ce point avant de signer un contrat.</p></div>
+            </div>
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Suis-je obligé de rester avec la marque d'origine pour l'entretien ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p><strong>Non.</strong> La législation belge et européenne vous protège. Vous êtes libre de choisir n'importe quel prestataire qualifié, garanti par la directive Ascenseurs 2014/33/UE et le droit belge de la concurrence.</p><p>Un prestataire indépendant certifié comme ELECTRATEC intervient sur toutes les marques avec les mêmes pièces certifiées. La seule contrainte : les travaux doivent être effectués par du personnel qualifié.</p></div>
+            </div>
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Quand dois-je moderniser ou remplacer mon ascenseur ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p>Signaux d'alerte : <strong>pannes fréquentes</strong> (3-4+ par an), <strong>coûts de réparation en hausse</strong>, <strong>non-conformité à l'AR 2003</strong>, pièces de rechange indisponibles, consommation énergétique excessive.</p><p>Un ascenseur de <strong>plus de 20 ans</strong> mérite un audit de modernisation. La modernisation partielle coûte 40 à 60 % moins cher qu'un remplacement complet et peut prolonger la durée de vie de 15 à 20 ans.</p></div>
+            </div>
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Quelles sont les aides pour l'installation d'un ascenseur en Wallonie ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p>Plusieurs mécanismes disponibles :</p><ul><li><strong>Prime Habitation Wallonie</strong> : travaux d'adaptation pour personnes handicapées ou âgées</li><li><strong>TVA réduite à 6 %</strong> : bâtiments de plus de 10 ans à usage privatif</li><li><strong>Prêt MIDES</strong> : taux réduit pour accessibilité en Région bruxelloise</li><li><strong>AViQ</strong> : interventions pour personnes en situation de handicap</li></ul><p>ELECTRATEC vous accompagne dans le montage du dossier de demande d'aide.</p></div>
+            </div>
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Un ascenseur domestique nécessite-t-il un permis d'urbanisme ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p>En Wallonie et à Bruxelles, l'installation d'un ascenseur privatif nécessite <strong>généralement un permis d'urbanisme</strong> lorsqu'elle implique des modifications structurelles. Des exemptions existent pour certains élévateurs sans modifications structurelles.</p><p>ELECTRATEC réalise une visite technique préalable pour identifier les contraintes et vous oriente vers la procédure appropriée. Comptez 4 à 12 semaines pour l'obtention du permis.</p></div>
+            </div>
+
+            <div class="faqi">
+              <button class="faqq" aria-expanded="false"><span>Que se passe-t-il si mon ascenseur est déclaré non-conforme ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+              <div class="faqa"><p>Les non-conformités sont classées par criticité (A, B, C). Les non-conformités de classe A (risque immédiat) entraînent l'<strong>immobilisation immédiate</strong> jusqu'à correction.</p><p>Pour les classes B et C, des délais sont accordés (6 à 24 mois). En cas de dépassement sans action, les sanctions peuvent aller jusqu'à la <strong>condamnation pénale</strong> du responsable. ELECTRATEC intervient en urgence et accompagne la procédure de re-contrôle.</p></div>
+            </div>
+
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="ibox" style="background:#1e3a5f;color:#fff;border-radius:12px;padding:28px;text-align:center;margin-bottom:20px;">
+            <div style="font-size:2.2rem;margin-bottom:10px;">📞</div>
+            <h3 style="color:#fff;margin-bottom:8px;font-size:1.1rem;">Une question urgente ?</h3>
+            <p style="color:rgba(255,255,255,.72);font-size:.87rem;margin-bottom:16px;">Notre équipe répond 7j/7, 24h/24.</p>
+            <a href="tel:+3225001234" style="display:block;background:var(--orange);color:#fff;padding:13px;border-radius:8px;text-decoration:none;font-weight:800;margin-bottom:10px;">+32 (0)2 500 12 34</a>
+            <button onclick="nav('contact')" style="display:block;width:100%;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;padding:11px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.9rem;">Formulaire de contact</button>
+          </div>
+          <div class="ibox" style="border:1px solid var(--border);border-radius:12px;padding:20px;">
+            <h4 style="margin-bottom:12px;">À télécharger</h4>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <a href="#" style="display:flex;gap:10px;align-items:center;padding:10px;background:var(--off);border-radius:8px;text-decoration:none;color:var(--navy);font-size:.87rem;"><span>📄</span> Checklist conformité AR 2003</a>
+              <a href="#" style="display:flex;gap:10px;align-items:center;padding:10px;background:var(--off);border-radius:8px;text-decoration:none;color:var(--navy);font-size:.87rem;"><span>📄</span> Guide choix prestataire</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     PAGE : CONTACT
+     ════════════════════════════════════════════ -->
+<div id="page-contact" class="page" style="display:none">
+  <div class="page-content">
+    <section class="phero phi"><div class="cw">
+      <div class="scrd"><span>Contactez-nous</span></div>
+      <h1>Demande de contact qualifiée</h1>
+      <p>Décrivez votre besoin en 2 minutes. Nous vous rappelons sous 4 heures ouvrables avec une réponse précise et personnalisée.</p>
+    </div></section>
+    <div class="trustbar"><div class="cw">
+      <div class="tbadge"><span class="tbadge-icon">✅</span> ISO 9001 certifié</div>
+      <div class="tbadge"><span class="tbadge-icon">🕐</span> Réponse sous 4h ouvrables</div>
+      <div class="tbadge"><span class="tbadge-icon">🔧</span> Toutes marques</div>
+      <div class="tbadge"><span class="tbadge-icon">📍</span> Belgique francophone</div>
+    </div></div>
+    <section class="cw" style="padding-top:48px;">
+      <div class="contlayout">
+        <div>
+          <h2 style="margin-bottom:6px;">Votre demande</h2>
+          <p style="margin-bottom:28px;font-size:.9rem;">Tous les champs * sont obligatoires.</p>
+          <div class="fg">
+            <label class="fi">Vous êtes * :</label>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;">
+              <label class="radio-btn"><input type="radio" name="profil" value="syndic"> Syndic / Gestionnaire</label>
+              <label class="radio-btn"><input type="radio" name="profil" value="proprietaire"> Propriétaire privé</label>
+              <label class="radio-btn"><input type="radio" name="profil" value="entreprise"> Entreprise</label>
+              <label class="radio-btn"><input type="radio" name="profil" value="promoteur"> Promoteur / Architecte</label>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="fi" for="type-demande">Type de demande * :</label>
+            <select id="type-demande" class="fs" required>
+              <option value="">— Sélectionnez —</option>
+              <option value="urgence">🚨 Dépannage d'urgence</option>
+              <option value="devis-maintenance">📋 Devis contrat de maintenance</option>
+              <option value="devis-modernisation">🔄 Devis modernisation</option>
+              <option value="devis-installation">🏗️ Devis installation neuve</option>
+              <option value="conformite">⚖️ Mise en conformité AR 2003</option>
+              <option value="audit">🔍 Audit technique indépendant</option>
+              <option value="pmr">♿ Élévateur PMR / accessibilité</option>
+              <option value="autre">💬 Autre question</option>
+            </select>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="form-grid-2">
+            <div class="fg"><label class="fi" for="prenom">Prénom *</label><input type="text" id="prenom" class="fs" placeholder="Jean" required></div>
+            <div class="fg"><label class="fi" for="nom">Nom *</label><input type="text" id="nom" class="fs" placeholder="Dupont" required></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="form-grid-2">
+            <div class="fg"><label class="fi" for="email">Email *</label><input type="email" id="email" class="fs" placeholder="jean.dupont@exemple.be" required></div>
+            <div class="fg"><label class="fi" for="telephone">Téléphone *</label><input type="tel" id="telephone" class="fs" placeholder="+32 (0)2 000 00 00" required></div>
+          </div>
+          <div class="fg"><label class="fi" for="adresse">Adresse du site (ascenseur concerné)</label><input type="text" id="adresse" class="fs" placeholder="Rue de la Loi 42, 1000 Bruxelles"></div>
+          <div class="fg"><label class="fi" for="marque">Marque / modèle (si connu)</label><input type="text" id="marque" class="fs" placeholder="Ex : Otis Gen2, Schindler 3300…"></div>
+          <div class="fg"><label class="fi" for="message">Décrivez votre situation *</label><textarea id="message" class="fs" rows="5" placeholder="Décrivez le problème, vos contraintes, le nombre d'arrêts, l'année d'installation si connue…" required style="resize:vertical;min-height:120px;"></textarea></div>
+          <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:24px;">
+            <input type="checkbox" id="rgpd" style="margin-top:3px;accent-color:var(--orange);flex-shrink:0;" required>
+            <label for="rgpd" style="font-size:.83rem;color:var(--muted);line-height:1.5;">J'accepte que mes données soient utilisées pour répondre à ma demande conformément au RGPD. Aucune revente à des tiers.</label>
+          </div>
+          <button type="button" class="fsubmit" onclick="submitContactForm()" id="btn-submit">
+            <span id="btn-text">Envoyer ma demande →</span>
+            <span id="btn-loading" style="display:none;">Envoi en cours…</span>
+          </button>
+        </div>
+        <aside class="sidebar">
+          <div style="background:#f06b1a;color:#fff;border-radius:12px;padding:24px;margin-bottom:20px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">🚨</div>
+            <h3 style="color:#fff;margin-bottom:6px;font-size:1rem;">Urgence 24h/24</h3>
+            <p style="color:rgba(255,255,255,.9);font-size:.85rem;margin-bottom:14px;">Ascenseur bloqué ou personne coincée ?</p>
+            <a href="tel:+3225001234" style="display:block;background:#fff;color:var(--orange);padding:13px;border-radius:8px;font-weight:800;text-decoration:none;">+32 (0)2 500 12 34</a>
+          </div>
+          <div class="ibox" style="border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;">
+            <h4 style="margin-bottom:14px;">Coordonnées</h4>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;gap:10px;"><span style="color:var(--orange);">📍</span><div><div style="font-weight:700;font-size:.9rem;">Siège social</div><div style="color:var(--muted);font-size:.85rem;">Rue des Artisans 12, 1400 Nivelles</div></div></div>
+              <div style="display:flex;gap:10px;"><span style="color:var(--orange);">📞</span><div><div style="font-weight:700;font-size:.9rem;">Standard</div><div style="color:var(--muted);font-size:.85rem;">+32 (0)67 00 00 00<br>Lun–Ven 8h–18h</div></div></div>
+              <div style="display:flex;gap:10px;"><span style="color:var(--orange);">✉️</span><div><div style="font-weight:700;font-size:.9rem;">Email</div><div style="color:var(--muted);font-size:.85rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fcfbf3fad5f0f9f0f6e1e7f4e1f0f6bbf7f0">[email&#160;protected]</a></div></div></div>
+            </div>
+          </div>
+          <div class="ibox" style="border:1px solid var(--border);border-radius:12px;padding:20px;">
+            <h4 style="margin-bottom:12px;">Garanties</h4>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;gap:8px;align-items:center;padding:8px;background:var(--off);border-radius:6px;font-size:.83rem;font-weight:700;"><span>🏅</span> ISO 9001 : 2015 certifié</div>
+              <div style="display:flex;gap:8px;align-items:center;padding:8px;background:var(--off);border-radius:6px;font-size:.83rem;font-weight:700;"><span>🔧</span> Toutes marques agréées</div>
+              <div style="display:flex;gap:8px;align-items:center;padding:8px;background:var(--off);border-radius:6px;font-size:.83rem;font-weight:700;"><span>🕐</span> Intervention 24h/24 7j/7</div>
+              <div style="display:flex;gap:8px;align-items:center;padding:8px;background:var(--off);border-radius:6px;font-size:.83rem;font-weight:700;"><span>📋</span> Devis gratuit sous 24h</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════ -->
+<footer id="site-footer">
+  <div class="ft">
+    <div class="cw">
+      <div class="fgrid">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;cursor:pointer;" onclick="nav('home')">
+            <svg width="34" height="34" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#f06b1a"/><path d="M8 24V10l8-6 8 6v14H20v-8h-8v8H8z" fill="white"/><rect x="13" y="18" width="6" height="6" fill="white" opacity=".5"/></svg>
+            <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;">ELECTRA<span style="color:var(--orange);">TEC</span></span>
+          </div>
+          <p style="color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.75;margin-bottom:20px;">Spécialiste belge de l'ascenseur : installation, modernisation, maintenance et conformité. ISO 9001. Toutes marques. Belgique francophone.</p>
+          <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:14px;text-align:center;">
+            <div style="color:var(--orange);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Urgence 24h/24 — 7j/7</div>
+            <a href="tel:+3225001234" style="color:#fff;font-size:1.15rem;font-weight:800;text-decoration:none;">+32 (0)2 500 12 34</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="fcol-title">Nos services</h4>
+          <ul class="fcol-list">
+            <li><a onclick="nav('depannage')">Dépannage 24/7</a></li>
+            <li><a onclick="nav('installation')">Installation</a></li>
+            <li><a onclick="nav('modernisation')">Modernisation</a></li>
+            <li><a onclick="nav('maintenance')">Maintenance</a></li>
+            <li><a onclick="nav('conformite')">Conformité AR 2003</a></li>
+            <li><a onclick="nav('audit')">Audit technique</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="fcol-title">Équipements</h4>
+          <ul class="fcol-list">
+            <li><a onclick="nav('ascenseur-immeuble')">Ascenseur immeuble</a></li>
+            <li><a onclick="nav('ascenseur-domestique')">Ascenseur domestique</a></li>
+            <li><a onclick="nav('monte-charge')">Monte-charge</a></li>
+            <li><a onclick="nav('monte-voiture')">Monte-voiture</a></li>
+            <li><a onclick="nav('elevateur-pmr')">Élévateur PMR</a></li>
+          </ul>
+          <h4 class="fcol-title" style="margin-top:20px;">Informations</h4>
+          <ul class="fcol-list">
+            <li><a onclick="nav('blog')">Blog & Conseils</a></li>
+            <li><a onclick="nav('faq')">FAQ</a></li>
+            <li><a onclick="nav('realisations')">Réalisations</a></li>
+            <li><a onclick="nav('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="fcol-title">Zones d'intervention</h4>
+          <ul class="fcol-list">
+            <li>📍 Bruxelles (19 communes)</li>
+            <li>📍 Brabant wallon</li>
+            <li>📍 Province de Namur</li>
+            <li>📍 Province de Hainaut (Mons)</li>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;">
+            <span class="fbadge">🏅 ISO 9001</span>
+            <span class="fbadge">🔧 Toutes marques</span>
+            <span class="fbadge">🕐 24h/24</span>
+            <span class="fbadge">📋 Devis gratuit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <div class="cw">
+      <span style="font-size:.82rem;">© <span id="footer-year"></span> ELECTRATEC SRL — TVA BE 0XXX.XXX.XXX — Tous droits réservés</span>
+      <div style="display:flex;gap:16px;">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a onclick="nav('contact')">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="alert" aria-live="polite"></div>
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+     ════════════════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── Navigation ── */
+function nav(id) {
+  // Cacher toutes les pages
+  var allPages = document.getElementsByClassName('page');
+  for (var i = 0; i < allPages.length; i++) {
+    allPages[i].style.display = 'none';
+    allPages[i].classList.remove('active');
+  }
+  // Afficher la page cible
+  var target = document.getElementById('page-' + id);
+  if (!target) { target = document.getElementById('page-home'); }
+  target.style.display = 'block';
+  target.style.minHeight = '100vh';
+  target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelectorAll('[data-nav]').forEach(function(el) {
+    el.classList.toggle('active', el.getAttribute('data-nav') === id);
+  });
+  closeMob();
+  setTimeout(initScrollReveal, 80);
+}
+
+/* ── Mobile menu ── */
+function openMob() {
+  document.getElementById('mob-nav').classList.add('open');
+  document.getElementById('mob-overlay').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+function closeMob() {
+  var n = document.getElementById('mob-nav');
+  var o = document.getElementById('mob-overlay');
+  if (n) n.classList.remove('open');
+  if (o) o.classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+/* ── Scroll reveal ── */
+function initScrollReveal() {
+  var els = document.querySelectorAll('.page.active .sr:not(.visible)');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  els.forEach(function(el) { obs.observe(el); });
+}
+
+/* ── FAQ accordion ── */
+function initFAQ() {
+  document.querySelectorAll('.faqi').forEach(function(item) {
+    var btn = item.querySelector('.faqq');
+    var ans = item.querySelector('.faqa');
+    if (!btn || !ans) return;
+    ans.style.cssText = 'max-height:0;overflow:hidden;opacity:0;padding:0;transition:max-height .38s ease,opacity .3s ease,padding .3s ease;';
+    btn.addEventListener('click', function() {
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.faqi.open').forEach(function(o) {
+        o.classList.remove('open');
+        var a = o.querySelector('.faqa');
+        var b = o.querySelector('.faqq');
+        if (a) { a.style.maxHeight = '0'; a.style.opacity = '0'; a.style.padding = '0'; }
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+      if (!open) {
+        item.classList.add('open');
+        ans.style.padding = '14px 0 20px';
+        ans.style.maxHeight = (ans.scrollHeight + 60) + 'px';
+        ans.style.opacity = '1';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+/* ── Toast ── */
+function showToast(msg, type) {
+  var t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.className = 'show ' + (type || 'success');
+  clearTimeout(t._t);
+  t._t = setTimeout(function() { t.classList.remove('show'); }, 4800);
+}
+
+/* ── Form submit ── */
+function submitContactForm() {
+  var fields = {
+    prenom: document.getElementById('prenom'),
+    nom: document.getElementById('nom'),
+    email: document.getElementById('email'),
+    tel: document.getElementById('telephone'),
+    msg: document.getElementById('message'),
+    type: document.getElementById('type-demande'),
+    rgpd: document.getElementById('rgpd'),
+    profil: document.querySelector('input[name="profil"]:checked')
+  };
+  if (!fields.profil) { showToast('⚠️ Veuillez sélectionner votre profil.', 'error'); return; }
+  if (!fields.type || !fields.type.value) { showToast('⚠️ Veuillez sélectionner le type de demande.', 'error'); return; }
+  if (!fields.prenom || !fields.prenom.value.trim()) { showToast('⚠️ Prénom requis.', 'error'); return; }
+  if (!fields.nom || !fields.nom.value.trim()) { showToast('⚠️ Nom requis.', 'error'); return; }
+  if (!fields.email || !fields.email.value.includes('@')) { showToast('⚠️ Email valide requis.', 'error'); return; }
+  if (!fields.tel || !fields.tel.value.trim()) { showToast('⚠️ Téléphone requis.', 'error'); return; }
+  if (!fields.msg || !fields.msg.value.trim()) { showToast('⚠️ Message requis.', 'error'); return; }
+  if (!fields.rgpd || !fields.rgpd.checked) { showToast('⚠️ Veuillez accepter la politique de confidentialité.', 'error'); return; }
+  var btnText = document.getElementById('btn-text');
+  var btnLoad = document.getElementById('btn-loading');
+  var btn = document.getElementById('btn-submit');
+  if (btnText) btnText.style.display = 'none';
+  if (btnLoad) btnLoad.style.display = 'inline';
+  if (btn) btn.disabled = true;
+  setTimeout(function() {
+    if (btnText) btnText.style.display = 'inline';
+    if (btnLoad) btnLoad.style.display = 'none';
+    if (btn) btn.disabled = false;
+    showToast('✅ Demande envoyée ! Nous vous recontactons sous 4h ouvrables.', 'success');
+    ['prenom','nom','email','telephone','message'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    var sel = document.getElementById('type-demande');
+    if (sel) sel.value = '';
+    var rgpd = document.getElementById('rgpd');
+    if (rgpd) rgpd.checked = false;
+    var profil = document.querySelector('input[name="profil"]:checked');
+    if (profil) profil.checked = false;
+  }, 1200);
+}
+
+/* ── Init ── */
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+  initFAQ();
+  initScrollReveal();
+  // Init home page display
+  document.querySelectorAll('.page').forEach(function(p) {
+    if (p.id === 'page-home') {
+      p.style.display = 'block';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+});
+
+window.addEventListener('resize', initScrollReveal);
+</script>
+</body>
+</html>
